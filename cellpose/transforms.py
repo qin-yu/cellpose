@@ -668,7 +668,7 @@ def normalize_img(img, normalize=True, norm3D=False, invert=False, lowhigh=None,
                                                            c], lower=percentile[0],
                                                   upper=percentile[1], copy=False)
         if (tile_norm_blocksize > 0 or normalize) and invert:
-            img_norm[..., c] = -1 * img_norm[..., c] + 1
+            img_norm[..., 0] = -1 * img_norm[..., 0] + 1
         elif invert:
             error_message = "cannot invert image without normalizing"
             transforms_logger.critical(error_message)
